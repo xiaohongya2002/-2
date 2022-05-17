@@ -1,0 +1,96 @@
+#问题一   问题3-1
+#浮点值numeric、整数integer、复数complex
+#3-2  levels()函数
+#3-3
+x<-"6.283185"
+as.numeric(x)
+#3-4
+#is.numeric()/is.double/is.factor()
+#3-5
+#rm(list=Is())
+#问题二   练习3-1
+class(Inf)
+class(NA)
+class(NaN)
+class("")
+mode(Inf)
+mode(NA)
+mode(NaN)
+mode("")
+#练习3-2
+gender_char<-sample(c("dog","cat","dolphin","hamster","goldfishi"),100,replace=T)
+gender_fac<-as.factor(gender_char)
+summary(gender_fac)
+#练习3-3
+peach<-20
+plum<-"fruity"
+pear<-TRUE
+Is(pattern="a")
+#问题三   问题4-1
+seq.int(0,1.25,0.25)
+#问题4-2  names()函数/value函数
+#问题4-3  正数索引/负数索引/逻辑索引/字符向量索引
+#问题4-4  
+arr<-array(c(1:24),dim=c(3,4,6))
+length(dim)
+#问题4-5  %*%
+#问题四  1)
+a<-seq(11,50,3)
+a-c(2,3)
+#2)
+a<-seq(1.1,4,20)
+a*c(4,5,8,9)
+#3)
+c(1,2,4,6)-c(8,0,-1,-4)
+c(1,2,4,6)+c(8,0,-1,-4)
+c(1,2,4,6)*c(8,0,-1,-4)
+c(1,2,4,6)/c(8,0,-1,-4)
+#问题五   练习4-1
+n<-seq(1,50)
+b<-n*(n+1)/2
+b
+names(b)=letters[1:15]
+e[b("a","e","i","o","u")]
+#练习4-2
+a<-c(10,9,8,7,6,5,4,3,2,1,0,1,2,3,4,5,6,7,8,9,10)
+diag(a)
+#问题六   
+#问题5-1
+a<-list(alpha = 1, list(beta = 2, gamma = 3, delta = 4), eta = NULL)
+length(a)
+#问题5-2
+#成对列表仅在内部使用，在使用formals时才会被显示调用
+#问题5-3
+#使用data.frame函数，row.names()函数
+#问题5-4   使用data.frame函数传入check.names=FALSE关闭
+#问题5-5   使用cbind和rbind把它们连接起来
+#问题七
+#练习5-1
+x<-0:99
+sqrt_x<-sqrt(x)
+#将向量x开根号
+is_square_number<-sqrt_x==floor(sqrt_x)
+#判断sqrt_x与floor(sqrt_x)是否相等，其中floor()得到的是整数值，sqrt_x中的整数返回TRUE,小数返回FALSE
+square_numbers<-x[is_square_number]
+#取出x中开根号仍为整数的数，即为平凡数
+groups<-cut(square_numbers,
+            seq.int(min(x),max(x),10),
+            include.lowest=TRUE,right=FALSE)
+#cut()函数将square_numbers切割成十组
+split(square_numbers,groups)
+#split()函数将square_numbers和groups合成一个列表
+#练习5-2
+data<-data.frame(iris)
+mean(iris$Sepal.Length)
+mean(iris$Sepal.Width)
+mean(iris$Petal.Length)
+mean(iris$Petal.Width)
+#使用mean计算R内部的平均值
+#练习5-3
+beaver1$id<-1
+beaver2$id<-2
+#在beaver1和beaver2中添加id列使其各等于1和2
+both_beavers<-rbind(beaver1,beaver2)
+#垂直拼接beaver1和beaver2
+subset(both_beavers,as.logical(activ))
+#使用subset()函数，去掉等于0的所有元素
